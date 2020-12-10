@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+    
+
+</head>
+<body>
+    <div id=container></div>
+    <script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Cases Reported by Colleges'
+    },
+    subtitle: {
+        text: 'Source: nytimes.com'
+    },
+    xAxis: {
+        categories: [
+            'Allen County Community College',
+            'Baker University',
+            'Benedictine College',
+            'Bethel College',
+            'Butler Community College',
+            'Central Christian College',
+            'Dodge City Community College',
+            'Emporia State University',
+            'SeFlint Hills Technical Collegep',
+            'Fort Hays State University',
+            'Haskell Indian Nations University',
+            'Hesston College',
+            'Hutchinson Community College',
+            'Johnson County Community College',
+         		'Kansas State University',
+         		'Kansas Wesleyan University',
+            'Labette Community College',
+            'Newman University',
+            'Pittsburg State University',
+            'Southwestern College',
+            'Sterling College',
+            'University of Kansas',
+            'University of Saint Mary',
+            'Washburn University',
+            'Wichita State University',
+            
+         
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max: 1500,
+        title: {
+            text: 'Cases'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} Cases</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Tokyo',
+        data: [61, 94, 130, 140, 212, 20, 13, 188, 4, 307, 0, 7, 51,136,1183,28,5,84,286,86,22,1249,34,215,149]
+
+    }]
+});
+    </script>
+    
+</body>
+</html>
